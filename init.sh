@@ -6,8 +6,13 @@ sudo ln -sf /home/box/web/etc/nginx.conf /etc/nginx/sites-enabled/test.conf
 sudo /etc/init.d/nginx restart
 
 #gunicorn.conf
-sudo ln -sf /home/box/web/etc/gunicorn-wsgi.conf /etc/gunicorn.d/test-wsgi
-sudo /etc/init.d/gunicorn restart
+#sudo gunicorn -c /home/box/web/etc/gunicorn-hello.py hello:app &
+sudo gunicorn -c /home/box/web/etc/gunicorn-django.py  wsgi &
+netstat -nlpat
+
+
+
+
 
 
 
